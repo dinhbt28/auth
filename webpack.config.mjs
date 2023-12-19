@@ -1,6 +1,7 @@
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import * as Repack from '@callstack/repack';
+import { getSharedDependencies } from 'super-app-dependencies';
 
 /**
  * More documentation, installation, usage, motivation and differences with Metro is available at:
@@ -108,7 +109,7 @@ export default (env) => {
       path: path.join(dirname, 'build/generated', platform),
       filename: 'index.bundle',
       chunkFilename: '[name].chunk.bundle',
-      publicPath: Repack.getPublicPath({platform, devServer}),
+      publicPath: Repack.getPublicPath({ platform, devServer }),
     },
     /**
      * Configures optimization of the built bundle.
@@ -235,23 +236,7 @@ export default (env) => {
         exposes: {
           './AuthProvider': './src/providers/AuthProvider',
         },
-        shared: {
-          react: {
-            singleton: true,
-            eager: false,
-            requiredVersion: '18.2.0',
-          },
-          'react-native': {
-            singleton: true,
-            eager: false,
-            requiredVersion: '0.72.0',
-          },
-          '@react-native-async-storage/async-storage': {
-            singleton: true,
-            eager: false,
-            requiredVersion: '1.21.0',
-          },
-        },
+        shared: getSharedDependencies({ eager: false }),
       }),
     ],
   };

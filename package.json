@@ -1,6 +1,6 @@
 {
   "name": "auth",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "project auth super app",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "metro-react-native-babel-preset": "^0.77.0",
-    "super-sdk": "0.0.1",
+    "super-app-dependencies": "workspace:*",
     "terser-webpack-plugin": "^5.3.9",
     "typescript": "^5.3.3",
     "webpack": "^5.89.0"
