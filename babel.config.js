@@ -14,6 +14,7 @@ module.exports = {
           '@contexts': './src/contexts',
           '@constants': './src/constants',
           '@providers': './src/providers',
+          '@screens': './src/screens',
         },
       },
     ],

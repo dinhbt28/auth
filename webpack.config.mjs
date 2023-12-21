@@ -234,6 +234,8 @@ export default (env) => {
       new Repack.plugins.ModuleFederationPlugin({
         name: 'auth',
         exposes: {
+          './AccountScreen': './src/screens/Account/index',
+          './SignInScreen': './src/screens/Signin/index',
           './AuthProvider': './src/providers/AuthProvider',
         },
         shared: getSharedDependencies({ eager: false }),
